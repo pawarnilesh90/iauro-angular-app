@@ -1,0 +1,33 @@
+.table-title {
+  margin-left: 1.5rem;
+  color: #827979;
+}
+ table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 16%;
+  }
+
+  .margin-auto {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+  .filter-width {
+    width: 96%;
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+
+.mat-column-action {
+  text-align: center;
+}
+.mat-column-education {
+  flex: 0 0 50%;
+}

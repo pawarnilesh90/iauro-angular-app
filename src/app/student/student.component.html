@@ -1,0 +1,60 @@
+<div class="page-container">
+    <div class="form-container">
+        <mat-card>
+            <form [formGroup]="studentForm" (submit)="submit()">
+                <mat-form-field class="form-field" appearance="outline">
+                    <mat-label> First name
+                    </mat-label>
+                    <input matInput formControlName="firstName" required>
+                    <mat-error *ngIf="studentForm.controls.firstName.touched && studentForm.controls.firstName.invalid">
+                        <span *ngIf="studentForm.controls.firstName.errors.required">This field is mandatory.</span>
+                        <span *ngIf="studentForm.controls.firstName.errors.pattern">This field is invalid.</span>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="form-field" appearance="outline">
+                    <mat-label> Last name
+                    </mat-label>
+                    <input matInput formControlName="lastName" required>
+                    <mat-error *ngIf="studentForm.controls.lastName.touched && studentForm.controls.lastName.invalid">
+                        <span *ngIf="studentForm.controls.lastName.errors.required">This field is mandatory.</span>
+                        <span *ngIf="studentForm.controls.lastName.errors.pattern">This field is invalid.</span>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="form-field" appearance="outline">
+                    <mat-label> E-mail
+                    </mat-label>
+                    <input matInput formControlName="email" required>
+                    <mat-error *ngIf="studentForm.controls.email.touched && studentForm.controls.email.invalid">
+                        <span *ngIf="studentForm.controls.email.errors.required">This field is mandatory.</span>
+                        <span *ngIf="studentForm.controls.email.errors.pattern">This field is invalid.</span>
+                    </mat-error>
+                </mat-form-field>
+                <div class="text-left">
+                    <label>Gender: </label>
+                    <mat-radio-group formControlName="gender">
+                      <mat-radio-button class="" value="male">Male</mat-radio-button>
+                      <mat-radio-button class="margin-left-1" value="female">Female</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="text-left margin-2">
+                    <mat-checkbox formControlName="change">Looking for change</mat-checkbox>
+                </div>
+                <mat-form-field class="form-field margin-2" appearance="fill">
+                    <mat-label>Education</mat-label>
+                    <mat-select formControlName="education">
+                      <mat-option value="MCA">MCA</mat-option>
+                      <mat-option value="MCS">MCS</mat-option>
+                      <mat-option value="Engineering">Engineering</mat-option>
+                      <mat-option value="B.Tech">B. Tech</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="form-field" appearance="fill">
+                    <mat-label>Description</mat-label>
+                    <textarea formControlName="description" matInput></textarea>
+                  </mat-form-field>
+                <button mat-raised-button *ngIf="!isEdit" color="primary" type="submit">Submit</button>
+                <button mat-raised-button *ngIf="isEdit" color="primary" type="submit">Update</button>
+            </form>
+        </mat-card>
+    </div>
+</div>
